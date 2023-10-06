@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk8tnoq3kxt5o"]
+
+[ext_resource type="Script" path="res://galawgalaw.gd" id="1_q4vrq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i8oem"]
+
+[sub_resource type="Curve3D" id="Curve3D_6v57d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3, 2, 4, 0, -2, 5, 0, 2, -5, -7, 4, -1, 0, 0, 0, 0, 0, 0, -2, 3, -4, -0.338277, 2.79828, 2.84812, 0.338277, -2.79828, -2.84812, -2, 2, -8, 0.402696, -2.86692, -2.91086, -0.402696, 2.86692, 2.91086, 2, 2, -8, -0.219488, -0.109915, -0.143165, 0.219488, 0.109915, 0.143165, 1.55071, 4.92213, -5.03853, 3.60847, -1.26569, -0.827376, -3.60847, 1.26569, 0.827376, 0.98967, 8.19663, -1.72763, 0, 0, 0, 0, 0, 0, -0.905199, 7.48119, -2.72022, 0, 0, 0, 0, 0, 0, -3, 2, 4),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="BoxMesh" id="BoxMesh_6f3sr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vomd5"]
+albedo_color = Color(0.803922, 0.498039, 0.917647, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_q4vrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(15.6408, 0, 0, 0, 0.234804, 0, 0, 0, 16.9872, 0, 0, 0)
+mesh = SubResource("BoxMesh_i8oem")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04586, 4.29422, 2.15849)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_6v57d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.972892, 0.034934, -0.228605, -1.86264e-09, 0.988525, 0.15106, 0.231259, -0.146965, 0.961728, -4.71795, 1.6422, 1.42831)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+mesh = SubResource("BoxMesh_6f3sr")
+surface_material_override/0 = SubResource("StandardMaterial3D_vomd5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0876947, 0.996147, 0, -0.996147, -0.0876947, 0, 18.7602, -3.50521)
