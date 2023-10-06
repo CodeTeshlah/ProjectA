@@ -9,21 +9,21 @@
 
 [sub_resource type="Curve3D" id="Curve3D_5jtcc"]
 _data = {
-"points": PackedVector3Array(-25.0856, -1.47215, 1.50487, 25.0856, 1.47215, -1.50487, -7.96252, 8.31684, -18.1539, -3.42161, 2.42777, 1.23786, 3.42161, -2.42777, -1.23786, 0.412666, 14.0892, -57.0124),
+"points": PackedVector3Array(-25.0856, -1.47215, 1.50487, 25.086, 0, 0, -20, 0, 0, 0, 0, 0, 3.42161, -2.42777, -1.23786, 0, 0, -57.012),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_pv8u3"]
 _data = {
-"points": PackedVector3Array(-20.9417, 0.993538, 3.50819, 20.9417, -0.993538, -3.50819, -12.83, 0.597565, -15.1408, 0.461973, -1.86329, -11.5569, -0.461973, 1.86329, 11.5569, -7.96883, -0.942871, 29.1019),
+"points": PackedVector3Array(-18.0235, -1.93517, -4.27285, 25, 0, 0, -20, 0, 0, 0, 0, 0, -0.461973, 1.86329, 11.5569, 0, 0, 40),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_6v57d"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -86.5237, 7.06965, -16.8636, 0, 0, 0, 0, 0, 0, -13.9444, 5.18404, -13.2717),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -90, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -35,19 +35,19 @@ script = ExtResource("1_q4vrq")
 transform = Transform3D(-0.131415, 0.10357, -0.985902, 0.101316, 0.990723, 0.0905713, -0.986137, 0.0879852, 0.140689, -86.2267, 7.91888, -12.0016)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.132519, -2.88161, 19.9273, -1.29176, -0.3261, 1.26228, 20.1091, -39.8625, 2.48362, 2.57661)
+transform = Transform3D(21.3929, 2.70343, 0.13253, -2.88161, 19.9273, -1.29177, -0.3261, 1.26228, 20.1091, -39.8625, 2.48362, 2.57661)
 mesh = SubResource("BoxMesh_dvil7")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.132519, -2.88161, 19.9274, -1.29176, -0.326102, 1.26228, 20.1091, -46.7282, -0.928567, -51.9439)
+transform = Transform3D(21.3929, 2.70343, 0.132532, -2.88161, 19.9274, -1.29177, -0.326102, 1.26228, 20.1091, -46.7282, -0.928567, -51.9439)
 mesh = SubResource("BoxMesh_dvil7")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.132519, -2.88161, 19.9274, -1.29176, -0.326105, 1.26228, 20.1091, 18.8772, 1.99585, -35.0247)
+transform = Transform3D(21.3929, 2.70344, 0.132535, -2.88161, 19.9274, -1.29177, -0.326105, 1.26228, 20.1091, 18.8772, 1.99585, -35.0247)
 mesh = SubResource("BoxMesh_dvil7")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.132519, -2.88161, 19.9274, -1.29176, -0.326106, 1.26228, 20.1091, -16.8408, 7.86292, -123.305)
+transform = Transform3D(21.3929, 2.70344, 0.132535, -2.88161, 19.9274, -1.29177, -0.326106, 1.26228, 20.1091, -16.8408, 7.86292, -123.305)
 mesh = SubResource("BoxMesh_dvil7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -55,17 +55,18 @@ transform = Transform3D(211.518, 0, 0, 0, 0.234804, 0, 0, 0, 123.505, 0, 0, 0)
 mesh = SubResource("BoxMesh_i8oem")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.010137, 0.962626, 0.270646, -0.0360298, -0.270836, 0.961951, 0.999299, -4.65335e-09, 0.0374287, -79.4212, 61.0011, 2.15849)
+transform = Transform3D(-0.0101371, 0.962626, 0.270646, -0.0360298, -0.270835, 0.961951, 0.999299, 1.19209e-07, 0.0374287, -79.4212, 61.0011, 2.15849)
 
 [node name="Path3DLeft" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14212, -2.72453, 5.27869)
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 curve = SubResource("Curve3D_5jtcc")
 
 [node name="Path3DRight" type="Path3D" parent="."]
-transform = Transform3D(0.998711, -0.0306742, -0.0404361, 0.0300939, 0.999436, -0.0148827, 0.0408698, 0.0136467, 0.999071, -1.04586, 4.29422, 2.15849)
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 curve = SubResource("Curve3D_pv8u3")
 
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 curve = SubResource("Curve3D_6v57d")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
@@ -73,8 +74,8 @@ transform = Transform3D(-0.0494294, 0.0259079, -0.998442, 0, 0.999664, 0.0259396
 loop = false
 
 [node name="MeshInstance3D" parent="Path3D/PathFollow3D" instance=ExtResource("2_ao6yi")]
-transform = Transform3D(0.569659, 0.526787, 5.28462, 0.0444381, 3.86199, -0.72547, 8.85911, -0.0532469, -0.336171, 4.84139, -2.28153, -0.596291)
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
 skeleton = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D/MeshInstance3D"]
-transform = Transform3D(0.0135045, -0.00806581, 0.11154, -0.010005, 0.255581, 0.0196932, -0.185606, -0.00894744, 0.0218247, 0.0109453, 0.798884, -0.0808148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109453, 0.798884, -0.0808148)

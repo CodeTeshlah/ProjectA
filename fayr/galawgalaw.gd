@@ -9,9 +9,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-		const move_speed = 10.0
+		const move_speed = 20.0
 		if (check_input()):
-			running = 2
+			running = 3
 		else:
 			running = 1
 		path.progress += (move_speed * running ) * delta
