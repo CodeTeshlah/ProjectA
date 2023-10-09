@@ -1,81 +1,200 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk8tnoq3kxt5o"]
+[gd_scene load_steps=17 format=3 uid="uid://dk8tnoq3kxt5o"]
 
 [ext_resource type="Script" path="res://galawgalaw.gd" id="1_q4vrq"]
 [ext_resource type="PackedScene" uid="uid://bty2bywe6nwcd" path="res://player_temp.tscn" id="2_ao6yi"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_dvil7"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qvowg"]
+sky_top_color = Color(0.188235, 0.188235, 0.188235, 1)
+sky_horizon_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="Sky" id="Sky_v5stf"]
+sky_material = SubResource("ProceduralSkyMaterial_qvowg")
+
+[sub_resource type="Environment" id="Environment_y0byc"]
+background_mode = 2
+background_color = Color(0.654902, 0.654902, 0.654902, 1)
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_v5stf")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.12
+ambient_light_energy = 0.01
+reflected_light_source = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_i8oem"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_dvil7"]
+
 [sub_resource type="Curve3D" id="Curve3D_5jtcc"]
 _data = {
-"points": PackedVector3Array(-25.0856, -1.47215, 1.50487, 25.086, 0, 0, -20, 0, 0, 0, 0, 0, 3.42161, -2.42777, -1.23786, 0, 0, -57.012),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(-25.086, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 3, 0, 0, -3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, 0, 0, -30),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 2
+point_count = 4
 
 [sub_resource type="Curve3D" id="Curve3D_pv8u3"]
 _data = {
-"points": PackedVector3Array(-18.0235, -1.93517, -4.27285, 25, 0, 0, -20, 0, 0, 0, 0, 0, -0.461973, 1.86329, 11.5569, 0, 0, 40),
+"points": PackedVector3Array(0, 0, 0, 5, 0, 0, -10, 0, 0, 0, 0, 0, 3, 0, 0, -3, 0, 0, 0, 0, -3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 30),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_6v57d"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -90, 0, 0, 0, 0, 0, 0, 0, 0, -70, 0, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="Curve3D" id="Curve3D_6v57d"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -90, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lf32"]
+albedo_color = Color(0.380392, 0.380392, 0.380392, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cr27x"]
+material = SubResource("StandardMaterial3D_4lf32")
+
+[sub_resource type="Animation" id="Animation_udq5q"]
+resource_name = "head_bob"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 5.58793e-09, 0), Vector3(0.0349066, -0.0174533, 0), Vector3(0, -0.0349066, 0), Vector3(0, 0, 0), Vector3(0.0349066, 0.0174533, 0), Vector3(0, 0.0349066, 0)]
 }
-point_count = 2
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.001, 1, 1), Vector3(-0.001, 1.025, 1), Vector3(-0.001, 1, 1), Vector3(-0.001, 1, 1), Vector3(-0.001, 1.025, 1), Vector3(-0.001, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ywesf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 5.58793e-09, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.001, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrpgc"]
+_data = {
+"RESET": SubResource("Animation_ywesf"),
+"head_bob": SubResource("Animation_udq5q")
+}
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_msv50"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_q4vrq")
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(-0.131415, 0.10357, -0.985902, 0.101316, 0.990723, 0.0905713, -0.986137, 0.0879852, 0.140689, -86.2267, 7.91888, -12.0016)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y0byc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.13253, -2.88161, 19.9273, -1.29177, -0.3261, 1.26228, 20.1091, -39.8625, 2.48362, 2.57661)
-mesh = SubResource("BoxMesh_dvil7")
+[node name="Environment" type="Node3D" parent="."]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70343, 0.132532, -2.88161, 19.9274, -1.29177, -0.326102, 1.26228, 20.1091, -46.7282, -0.928567, -51.9439)
-mesh = SubResource("BoxMesh_dvil7")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70344, 0.132535, -2.88161, 19.9274, -1.29177, -0.326105, 1.26228, 20.1091, 18.8772, 1.99585, -35.0247)
-mesh = SubResource("BoxMesh_dvil7")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(21.3929, 2.70344, 0.132535, -2.88161, 19.9274, -1.29177, -0.326106, 1.26228, 20.1091, -16.8408, 7.86292, -123.305)
-mesh = SubResource("BoxMesh_dvil7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(211.518, 0, 0, 0, 0.234804, 0, 0, 0, 123.505, 0, 0, 0)
+[node name="Floor" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(40, 0, 0, 0, 0.044, 0, 0, 0, 63.2295, -72.8908, 0, 0.808)
 mesh = SubResource("BoxMesh_i8oem")
+skeleton = NodePath("../..")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.0101371, 0.962626, 0.270646, -0.0360298, -0.270835, 0.961951, 0.999299, 1.19209e-07, 0.0374287, -79.4212, 61.0011, 2.15849)
+[node name="Floor2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(40, 0, 0, 0, 0.044, 0, 0, 0, 63.2295, -72.8908, 5.30652, 0.808)
+visible = false
+mesh = SubResource("BoxMesh_i8oem")
+skeleton = NodePath("../..")
 
-[node name="Path3DLeft" type="Path3D" parent="."]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(29.6722, -0.0576296, -6.28874e-07, 0.23305, 7.33748, 2.69267e-07, 8.84331e-07, -9.56728e-08, 21.0299, -79.3183, 2.18756, 16.3574)
+mesh = SubResource("BoxMesh_dvil7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(29.6722, -0.0576296, -6.57341e-07, 0.23305, 7.33748, 2.81456e-07, 8.84331e-07, -9.56728e-08, 21.9818, -79.3183, 2.18756, -14.5858)
+mesh = SubResource("BoxMesh_dvil7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(-2.34421e-06, 2.22656e-09, 21.9818, 0.374408, 7.29617, 0, -53.6292, 0.0509377, -9.60855e-07, -43.9083, 2.18756, 1.12395)
+mesh = SubResource("BoxMesh_dvil7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.0101718, 0.812593, -0.582743, -0.0141816, 0.582832, 0.812469, 0.999848, -1.58358e-08, 0.0174523, -82.6748, 26.701, 1.42358)
+visible = false
+light_color = Color(0.172549, 0.0901961, 0.34902, 1)
+shadow_enabled = true
+
+[node name="Navigation" type="Node3D" parent="."]
+
+[node name="Path3DLeft" type="Path3D" parent="Navigation"]
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, -60, 1, 1)
 curve = SubResource("Curve3D_5jtcc")
 
-[node name="Path3DRight" type="Path3D" parent="."]
-transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
+[node name="Path3DRight" type="Path3D" parent="Navigation"]
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, -60, 1, 1)
 curve = SubResource("Curve3D_pv8u3")
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="Navigation"]
 transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 1, 0)
 curve = SubResource("Curve3D_6v57d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.0494294, 0.0259079, -0.998442, 0, 0.999664, 0.0259396, 0.998777, 0.00128218, -0.0494128, -86.5237, 7.06965, -16.8636)
+[node name="PathFollow3D" type="PathFollow3D" parent="Navigation/Path3D"]
+transform = Transform3D(-4.37113e-08, 0, -1, 0, 1, 0, 0.999999, 0, -4.37114e-08, -90, 0, 0)
 loop = false
 
-[node name="MeshInstance3D" parent="Path3D/PathFollow3D" instance=ExtResource("2_ao6yi")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, 0, 0)
-skeleton = NodePath("../..")
+[node name="Player" type="Node3D" parent="Navigation/Path3D/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -1.86265e-09, 0, 1, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109453, 0.798884, -0.0808148)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/Path3D/PathFollow3D/Player"]
+transform = Transform3D(0.46239, 0.190253, -0.000387526, -0.184609, 0.448918, 0.119966, 0.0459957, -0.110799, 0.485395, 1.45421, 0.131661, -0.642448)
+mesh = SubResource("CylinderMesh_cr27x")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="Camera3D" type="Camera3D" parent="Navigation/Path3D/PathFollow3D/Player"]
+transform = Transform3D(1, 0, 5.58793e-09, 0, 1, 0, -5.58793e-09, 0, 1, -0.001, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Navigation/Path3D/PathFollow3D/Player/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_qrpgc")
+}
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Navigation/Path3D/PathFollow3D/Player/Camera3D"]
+transform = Transform3D(0.999391, 0, -0.0348995, 0, 1, 0, 0.0348995, 0, 0.999391, 0.0358992, 0.56125, -0.999359)
+light_energy = 4.277
+spot_range = 28.048
+spot_angle = 62.72
+
+[node name="MeshInstance3D" parent="Navigation/Path3D/PathFollow3D" instance=ExtResource("2_ao6yi")]
+transform = Transform3D(1, 0, 1.86265e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, -0.307125, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_msv50")
+skeleton = NodePath("../..")
