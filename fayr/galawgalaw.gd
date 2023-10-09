@@ -17,7 +17,6 @@ func _process(delta):
 			running = 1
 		path.progress += (move_speed * running ) * delta
 		anim.play("head_bob")
-		print(path.progress_ratio >= 1)
 		if (path.progress_ratio) >= 1:
 			anim.stop(false)
 			check_direction()

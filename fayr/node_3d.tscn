@@ -47,6 +47,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lf32"]
+diffuse_mode = 3
 albedo_color = Color(0.380392, 0.380392, 0.380392, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cr27x"]
@@ -174,7 +175,7 @@ loop = false
 [node name="Player" type="Node3D" parent="Navigation/Path3D/PathFollow3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -1.86265e-09, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Navigation/Path3D/PathFollow3D/Player"]
+[node name="Item" type="MeshInstance3D" parent="Navigation/Path3D/PathFollow3D/Player"]
 transform = Transform3D(0.46239, 0.190253, -0.000387526, -0.184609, 0.448918, 0.119966, 0.0459957, -0.110799, 0.485395, 1.45421, 0.131661, -0.642448)
 mesh = SubResource("CylinderMesh_cr27x")
 skeleton = NodePath("../../MeshInstance3D")
